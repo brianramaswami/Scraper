@@ -1,4 +1,4 @@
-
+function grabArticles(){
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
   // For each one
@@ -6,8 +6,9 @@ $.getJSON("/articles", function(data) {
     // Display the apropos information on the page
     $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
   }
+  console.log("grabbed articles");
 });
-
+}
 
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function() {
